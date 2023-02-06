@@ -4,34 +4,36 @@ on:
   workflow_dispatch:
   push:
     branches:
-    - main
-    
+      - main
+
 env:
-  AZURE_WEBAPP_NAME: DatingAppGUI2023   # set this to your application's name
-  AZURE_WEBAPP_PACKAGE_PATH: './dist/client'      # set this to the path to your web app project
-  NODE_VERSION: '18.x'                # set this to the node version to use
+  AZURE_WEBAPP_NAME: DatingAppGUI2023 # set this to your application's name
+  AZURE_WEBAPP_PACKAGE_PATH: "./dist/client" # set this to the path to your web app project
+  NODE_VERSION: "18.x" # set this to the node version to use
 
 jobs:
   build-and-deploy:
     runs-on: windows-latest
-    
+
     steps:
-    - uses: actions/checkout@master
-    
-    - name: Use Node.js ${{ env.NODE_VERSION }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ env.NODE_VERSION }}
-        
-    - name: npm install and build
-      run: |
-        npm install
-        npm run build
-        
-    - name: 'Deploy to Azure WebApp'
-      uses: azure/webapps-deploy@v2
-      with: 
-        app-name: ${{ env.AZURE_WEBAPP_NAME }}
-        slot-name: 'production'
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_DATINGAPP_GUI }}
-        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+      - uses: actions/checkout@master
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: npm install and build
+        run: |
+          npm install @kolkov/ngx-gallery --legacy-peer-deps
+          npm install ngx-spinner --legacy-peer-deps  
+          npm install
+          npm run build
+
+      - name: "Deploy to Azure WebApp"
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          slot-name: "production"
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE_DATINGAPP_GUI }}
+          package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
