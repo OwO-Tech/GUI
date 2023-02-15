@@ -27,6 +27,7 @@ jobs:
         run: |
           npm install @kolkov/ngx-gallery --legacy-peer-deps
           npm install ngx-spinner --legacy-peer-deps  
+          npm install ng2-file-upload@next --legacy-peer-deps
           npm install
           npm run build
 
