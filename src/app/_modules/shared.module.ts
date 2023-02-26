@@ -9,6 +9,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { TimeagoModule } from 'ngx-timeago';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     }),
     PaginationModule.forRoot(),
     TabsModule.forRoot(),
+    TimeagoModule.forRoot(),
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
     }),
@@ -38,6 +40,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
     NgxSpinnerModule,
     PaginationModule,
     TabsModule,
+    TimeagoModule,
     ToastrModule
   ]
 })
