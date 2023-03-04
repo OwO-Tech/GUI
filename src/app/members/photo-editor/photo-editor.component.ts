@@ -6,7 +6,7 @@ import { Photo } from 'src/app/_models/photo';
 import { User } from 'src/app/_models/user';
 import { AccountService } from 'src/app/_services/account.service';
 import { MembersService } from 'src/app/_services/members.service';
-import { enviroment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-photo-editor',
@@ -17,7 +17,7 @@ export class PhotoEditorComponent implements OnInit {
   @Input() member: Member | undefined;
   uploader: FileUploader | undefined;
   hasBaseDropZoneOver = false;
-  baseUrl = enviroment.apiUrl;
+  baseUrl = environment.apiUrl;
   user: User | undefined;
 
   constructor(private accountService: AccountService, private memberService: MembersService) {

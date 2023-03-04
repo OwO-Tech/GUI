@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, of, take } from 'rxjs';
-import { enviroment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { Member } from '../_models/member';
 import { User } from '../_models/user';
 import { UserParams } from '../_models/userParams';
@@ -12,7 +12,7 @@ import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
   providedIn: 'root'
 })
 export class MembersService {
-  baseUrl = enviroment.apiUrl;
+  baseUrl = environment.apiUrl;
   members: Member[] = [];
   memberCache = new Map();
   user: User | undefined;

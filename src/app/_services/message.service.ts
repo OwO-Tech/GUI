@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { enviroment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 import { Message } from '../_models/message';
 import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
 
@@ -8,7 +8,7 @@ import { getPaginatedResult, getPaginationHeaders } from './paginationHelper';
   providedIn: 'root'
 })
 export class MessageService {
-  baseUrl = enviroment.apiUrl;
+  baseUrl = environment.apiUrl;
 
   constructor(
     private http: HttpClient
