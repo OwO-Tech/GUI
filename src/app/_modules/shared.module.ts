@@ -10,6 +10,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { TimeagoModule } from 'ngx-timeago';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { TimeagoModule } from 'ngx-timeago';
     BsDropdownModule.forRoot(),
     ButtonsModule.forRoot(),
     FileUploadModule,
+    ModalModule.forRoot(),
     NgxGalleryModule,
     NgxSpinnerModule.forRoot({
       type: 'pacman'
@@ -36,6 +38,7 @@ import { TimeagoModule } from 'ngx-timeago';
     BsDropdownModule,
     ButtonsModule,
     FileUploadModule,
+    ModalModule,
     NgxGalleryModule,
     NgxSpinnerModule,
     PaginationModule,
